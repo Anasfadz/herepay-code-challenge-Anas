@@ -61,5 +61,9 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 ## HEREPAY CODE CHALLENGE ANAS
 
-PHP version 7.4.33
-Laravel version 8.83.27
+-PHP version 7.4.33
+-Laravel version 8.83.27
+-Clone this repository 
+-Create databse on local database
+-Migrate seeder database using php artisan db:seed to get the first data (Ali)
+-Serve this laravel code using php atisan serve and the upload csv page will be the welcome page

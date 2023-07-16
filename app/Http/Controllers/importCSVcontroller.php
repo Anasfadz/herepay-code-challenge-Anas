@@ -21,31 +21,31 @@ class importCSVcontroller extends Controller
         $csvData = file_get_contents($file);
         $rows = array_map('str_getcsv', explode("\n", $csvData));
 
-        // Assuming the CSV file has a header row, skip the first row
         $header = array_shift($rows);
 
         foreach ($rows as $row) {
-            // Assuming the CSV file columns are in the following order: name, email
             $name = $row[0];
             
             if($name != null)
             {
-                $email = $row[1];
+                $class = $row[1];
                 $level = $row[2];
                 $parent = $row[3];
 
-                $checking = student_contact::where('Parent_Contact',$parent)->exists();
+                $checking = student_contact::where('Parent_Contact',$parent)
+                ->where('Name', $name)->where('Level', $level)
+                ->where('Class', $class)->exists();
 
                 if($checking)
                 {
-                    echo "User with this email already exists.";
+                    // echo "User with this email already exists.";
 
                 }
                 else
                 {
                     student_contact::insert([
                     'Name' => $name,
-                    'Class' => $email,
+                    'Class' => $class,
                     'Level' => $level,
                     'Parent_Contact' => $parent,
                     'created_at' => now(),
