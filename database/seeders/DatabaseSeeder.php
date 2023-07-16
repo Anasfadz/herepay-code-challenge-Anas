@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\student_contact;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +14,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        student_contact::create([
+            'Name' => 'Ali',
+            'Level' => 2,
+            'Class' => 'Berlian',
+            'Parent_contact' => '0112111111',
+        ]);
     }
 }

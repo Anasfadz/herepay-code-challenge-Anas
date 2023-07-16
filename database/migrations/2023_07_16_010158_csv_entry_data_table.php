@@ -13,7 +13,14 @@ class CsvEntryDataTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('student_contacts', function (Blueprint $table) {
+            $table->id();
+            $table->string('Name');
+            $table->string('Class');
+            $table->integer('Level');
+            $table->string('Parent_Contact');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +30,6 @@ class CsvEntryDataTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('student_contacts');
     }
 }
