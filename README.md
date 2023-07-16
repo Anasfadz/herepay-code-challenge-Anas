@@ -65,5 +65,5 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 -Laravel version 8.83.27
 -Clone this repository 
 -Create databse on local database
--Migrate seeder database using php artisan db:seed to get the first data (Ali)
+-Migrate seeder database using php artisan migrate:fresh --seed to get the table and first data (Ali)
 -Serve this laravel code using php atisan serve and the upload csv page will be the welcome page
