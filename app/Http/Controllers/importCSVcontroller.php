@@ -55,6 +55,6 @@ class importCSVcontroller extends Controller
             }
         }
 
-        return redirect()->back();
+        return redirect()->back()->with('alert', 'Updated!');
     }
 }
